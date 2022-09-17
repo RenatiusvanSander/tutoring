@@ -2,22 +2,26 @@ package com.remad.tutoring.models;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * customer's invoice for a done tutoring appointment.
  */
 @Entity
+@Table(name = "Invoice")
 public class Invoice {
 
   /**
    * invoice number of done tutoring and primary key for invoices
    */
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "invoice_no")
   private long invoiceNo;
 
   /**
@@ -34,11 +38,13 @@ public class Invoice {
   /**
    * date of invoice
    */
+  @Column(name = "invoice_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime invoiceDate;
 
   /**
    * tutoring date of the invoice
    */
+  @Column(name = "invoice_tutoring_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime invoiceTutoringDate;
 
   /**
@@ -50,6 +56,7 @@ public class Invoice {
   /**
    * creation date of invoice
    */
+  @Column(name = "invoice_creation_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime invoiceCreationDate;
 
   /**
@@ -61,7 +68,6 @@ public class Invoice {
   /**
    * Constructor
    *
-   * @param invoiceNo                given invoice number
    * @param invoiceServiceContractNo given invoice's service contract
    * @param invoiceTutoringHours     given invoice's tutoring hours
    * @param invoiceDate              given invoice's date
@@ -69,15 +75,12 @@ public class Invoice {
    * @param invoiceCustomerNo        given invoice's customer no
    * @param invoiceCreationDate      given invoice's creation date of this data set
    */
-  public Invoice(long invoiceNo,
-      long invoiceServiceContractNo,
+  public Invoice(long invoiceServiceContractNo,
       float invoiceTutoringHours,
       LocalDateTime invoiceDate,
       LocalDateTime invoiceTutoringDate,
       long invoiceCustomerNo,
       LocalDateTime invoiceCreationDate) {
-
-    this.invoiceNo = invoiceNo;
     this.invoiceServiceContractNo = invoiceServiceContractNo;
     this.invoiceTutoringHours = invoiceTutoringHours;
     this.invoiceDate = invoiceDate;

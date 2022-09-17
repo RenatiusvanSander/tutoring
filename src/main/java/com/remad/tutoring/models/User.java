@@ -7,12 +7,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * A real user in universe of the tutoring app.
  */
 @Entity
+@Table(name = "User")
 public class User {
+
+  /**
+   * userNo, as synonym unique primary key, for a data set
+   */
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
+  /**
+   * user's name
+   */
+  private String userName;
+  /**
+   * user's password
+   */
+  private String userPassword;
+  /**
+   * the user's e-mail
+   */
+  private String userEmail;
+  /**
+   * creation date of this data set
+   */
+  @Column(name = "user_creation_date", columnDefinition = "TIMESTAMP")
+  private LocalDateTime userCreationDate;
 
   /**
    * Constructor
@@ -31,11 +57,43 @@ public class User {
    */
   public User(long userNo, String userName, String userPassword, String userEmail,
       LocalDateTime userCreationDate) {
-    this.userNo = userNo;
     this.userName = userName;
     this.userPassword = userPassword;
     this.userEmail = userEmail;
     this.userCreationDate = userCreationDate;
+  }
+
+  @Override
+  public String toString() {
+    return "User{" +
+        "id=" + id +
+        ", userName='" + userName + '\'' +
+        ", userPassword='" + userPassword + '\'' +
+        ", userEmail='" + userEmail + '\'' +
+        ", userCreationDate=" + userCreationDate +
+        '}';
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getId(), getUserName(), getUserPassword(), getUserEmail(),
+        getUserCreationDate());
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+
+    if (!(o instanceof User)) {
+      return false;
+    }
+
+    User user = (User) o;
+    return getId() == user.getId() && getUserName().equals(user.getUserName())
+        && getUserPassword().equals(user.getUserPassword()) && getUserEmail().equals(
+        user.getUserEmail()) && getUserCreationDate().equals(user.getUserCreationDate());
   }
 
   /**
@@ -43,17 +101,8 @@ public class User {
    *
    * @return user's number as primary key
    */
-  public long getUserNo() {
-    return userNo;
-  }
-
-  /**
-   * Sets user's number as primary key
-   *
-   * @param userNo user's number as primary key to set
-   */
-  public void setUserNo(long userNo) {
-    this.userNo = userNo;
+  public long getId() {
+    return this.id;
   }
 
   /**
@@ -128,64 +177,4 @@ public class User {
     this.userCreationDate = userCreationDate;
   }
 
-  /**
-   * userNo, as synonym unique primary key, for a data set
-   */
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long userNo;
-
-  /**
-   * user's name
-   */
-  private String userName;
-
-  /**
-   * user's password
-   */
-  private String userPassword;
-
-  /**
-   * the user's e-mail
-   */
-  private String userEmail;
-
-  /**
-   * creation date of this data set
-   */
-  @Column(name = "user_creation_date", columnDefinition = "TIMESTAMP")
-  private LocalDateTime userCreationDate;
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-
-    if (!(o instanceof User)) {
-      return false;
-    }
-
-    User user = (User) o;
-    return getUserNo() == user.getUserNo() && getUserName().equals(user.getUserName())
-        && getUserPassword().equals(user.getUserPassword()) && getUserEmail().equals(
-        user.getUserEmail()) && getUserCreationDate().equals(user.getUserCreationDate());
-  }
-
-  @Override
-  public String toString() {
-    return "User{" +
-        "userNo=" + userNo +
-        ", userName='" + userName + '\'' +
-        ", userPassword='" + userPassword + '\'' +
-        ", userEmail='" + userEmail + '\'' +
-        ", userCreationDate=" + userCreationDate +
-        '}';
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(getUserNo(), getUserName(), getUserPassword(), getUserEmail(),
-        getUserCreationDate());
-  }
 }

@@ -2,6 +2,7 @@ package com.remad.tutoring.models;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,8 @@ public class TutoringAppointment {
    * tutoring appointment number as primary key of a tutoring appointment
    */
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "tutoring_appointment_no")
   private long tutoringAppointmentNo;
   /**
    * tutoring appointment's customer number
@@ -26,14 +28,17 @@ public class TutoringAppointment {
   /**
    * date of tutoring appointment
    */
+  @Column(name = "tutoring_appointment_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime tutoringAppointmentDate;
   /**
    * tutoring appointment's time as date time
    */
+  @Column(name = "tutoring_appointment_date_time", columnDefinition = "TIMESTAMP")
   private LocalDateTime tutoringAppointmentDateTime;
   /**
    * tutoring appointment's creation date
    */
+  @Column(name = "tutoring_appointment_creation_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime tutoringAppointmentCreationDate;
 
   /**
@@ -45,16 +50,14 @@ public class TutoringAppointment {
   /**
    * Constructor
    *
-   * @param tutoringAppointmentNo           tutoring appointment's number
    * @param tutoringAppointmentCustomerNo   tutoring appointment's customer number
    * @param tutoringAppointmentDate         tutoring appointment's date
    * @param tutoringAppointmentDateTime     tutoring appointment's date time
    * @param tutoringAppointmentCreationDate tutoring appointment's creation date
    */
-  public TutoringAppointment(long tutoringAppointmentNo, long tutoringAppointmentCustomerNo,
+  public TutoringAppointment(long tutoringAppointmentCustomerNo,
       LocalDateTime tutoringAppointmentDate, LocalDateTime tutoringAppointmentDateTime,
       LocalDateTime tutoringAppointmentCreationDate) {
-    this.tutoringAppointmentNo = tutoringAppointmentNo;
     this.tutoringAppointmentCustomerNo = tutoringAppointmentCustomerNo;
     this.tutoringAppointmentDate = tutoringAppointmentDate;
     this.tutoringAppointmentDateTime = tutoringAppointmentDateTime;

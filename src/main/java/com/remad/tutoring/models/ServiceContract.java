@@ -2,6 +2,7 @@ package com.remad.tutoring.models;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,43 @@ import javax.persistence.Id;
  */
 @Entity
 public class ServiceContract {
+
+  /**
+   * service contract number as primary key
+   */
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long serviceContractNo;
+  /**
+   * name of service contract
+   */
+  private String serviceContractName;
+  /**
+   * description of service contract
+   */
+  private String serviceContractDescription;
+  /**
+   * creation date of service contract
+   */
+  @Column(name = "service_contract_creation_date", columnDefinition = "TIMESTAMP")
+  private LocalDateTime serviceContractCreationDate;
+
+  /**
+   * Constructor
+   */
+  public ServiceContract() {
+  }
+
+  /**
+   * Constructor
+   *
+   * @param serviceContractName         given service contract name
+   * @param serviceContractDescription  given service contract description
+   * @param serviceContractCreationDate creation date of service contract
+   */
+  public ServiceContract(String serviceContractName,
+      String serviceContractDescription, LocalDateTime serviceContractCreationDate) {
+  }
 
   /**
    * Gets service contract number
@@ -86,13 +124,9 @@ public class ServiceContract {
   }
 
   @Override
-  public String toString() {
-    return "ServiceContract{" +
-        "serviceContractNo=" + serviceContractNo +
-        ", serviceContractName='" + serviceContractName + '\'' +
-        ", serviceContractDescription='" + serviceContractDescription + '\'' +
-        ", serviceContractCreationDate=" + serviceContractCreationDate +
-        '}';
+  public int hashCode() {
+    return Objects.hash(serviceContractNo, serviceContractName, serviceContractDescription,
+        serviceContractCreationDate);
   }
 
   @Override
@@ -111,48 +145,12 @@ public class ServiceContract {
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash(serviceContractNo, serviceContractName, serviceContractDescription,
-        serviceContractCreationDate);
+  public String toString() {
+    return "ServiceContract{" +
+        "serviceContractNo=" + serviceContractNo +
+        ", serviceContractName='" + serviceContractName + '\'' +
+        ", serviceContractDescription='" + serviceContractDescription + '\'' +
+        ", serviceContractCreationDate=" + serviceContractCreationDate +
+        '}';
   }
-
-  /**
-   * Constructor
-   */
-  public ServiceContract() {
-  }
-
-  /**
-   * Constructor
-   *
-   * @param serviceContractNo           service contract number used as primary key
-   * @param serviceContractName         given service contract name
-   * @param serviceContractDescription  given service contract description
-   * @param serviceContractCreationDate creation date of service contract
-   */
-  public ServiceContract(long serviceContractNo, String serviceContractName,
-      String serviceContractDescription, LocalDateTime serviceContractCreationDate) {
-  }
-
-  /**
-   * service contract number as primary key
-   */
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long serviceContractNo;
-
-  /**
-   * name of service contract
-   */
-  private String serviceContractName;
-
-  /**
-   * description of service contract
-   */
-  private String serviceContractDescription;
-
-  /**
-   * creation date of service contract
-   */
-  private LocalDateTime serviceContractCreationDate;
 }

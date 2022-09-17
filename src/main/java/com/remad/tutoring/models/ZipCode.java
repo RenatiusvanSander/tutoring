@@ -1,16 +1,36 @@
 package com.remad.tutoring.models;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Entity is concerning the zip code of a location.
  */
 @Entity
+@Table(name ="Zipcode")
 public class ZipCode {
+
+  /**
+   * primary key for the zip code
+   */
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
+  /**
+   * location of zip code
+   */
+  private String zipCodeLocation;
+  /**
+   * creation date of zip code
+   */
+  @Column(name = "zip_code_creation_date", columnDefinition = "TIMESTAMP")
+  private LocalDateTime zipCodeCreationDate;
 
   /**
    * Constructor
@@ -21,30 +41,94 @@ public class ZipCode {
   /**
    * Constructor
    *
-   * @param zipCode             the zip code as primary key
+   * @param id             the zip code as primary key
    * @param zipCodeLocation     location of belonging zip code
    * @param zipCodeCreationDate creation time of the zip code
    */
-  public ZipCode(long zipCode, String zipCodeLocation, LocalDateTime zipCodeCreationDate) {
-    this.zipCode = zipCode;
+  public ZipCode(long id, String zipCodeLocation, LocalDateTime zipCodeCreationDate) {
+    this.id = id;
     this.zipCodeLocation = zipCodeLocation;
     this.zipCodeCreationDate = zipCodeCreationDate;
   }
 
   /**
-   * primary key for the zip code
+   * Gets zipcode
+   *
+   * @return zipcode
    */
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long zipCode;
+  public long getId() {
+    return id;
+  }
 
   /**
-   * location of zip code
+   * Sets zip code
+   *
+   * @param id zip code to set
    */
-  private String zipCodeLocation;
+  public void setId(long id) {
+    this.id = id;
+  }
 
   /**
-   * creation date of zip code
+   * Gets location
+   *
+   * @return zipcode's location
    */
-  private LocalDateTime zipCodeCreationDate;
+  public String getZipCodeLocation() {
+    return zipCodeLocation;
+  }
+
+  /**
+   * Sets location
+   *
+   * @param zipCodeLocation zipcode's location to set
+   */
+  public void setZipCodeLocation(String zipCodeLocation) {
+    this.zipCodeLocation = zipCodeLocation;
+  }
+
+  /**
+   * Gets creation date
+   *
+   * @return zipcode's creation date
+   */
+  public LocalDateTime getZipCodeCreationDate() {
+    return zipCodeCreationDate;
+  }
+
+  /**
+   * Sets creation date
+   *
+   * @param zipCodeCreationDate zipcode's creation date to set
+   */
+  public void setZipCodeCreationDate(LocalDateTime zipCodeCreationDate) {
+    this.zipCodeCreationDate = zipCodeCreationDate;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, zipCodeLocation, zipCodeCreationDate);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof ZipCode)) {
+      return false;
+    }
+    ZipCode zipCode1 = (ZipCode) o;
+    return id == zipCode1.id && zipCodeLocation.equals(zipCode1.zipCodeLocation)
+        && zipCodeCreationDate.equals(zipCode1.zipCodeCreationDate);
+  }
+
+  @Override
+  public String toString() {
+    return "ZipCode{" +
+        "zipCode=" + id +
+        ", zipCodeLocation='" + zipCodeLocation + '\'' +
+        ", zipCodeCreationDate=" + zipCodeCreationDate +
+        '}';
+  }
 }

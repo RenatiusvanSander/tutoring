@@ -2,6 +2,7 @@ package com.remad.tutoring.models;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,8 @@ public class Reminder {
    * reminder number as primary key of a data set of 'Reminder'
    */
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "reminder_no")
   private long reminderNo;
   /**
    * reminder's tutoring appointment number
@@ -32,10 +34,12 @@ public class Reminder {
   /**
    * reminder's date
    */
+  @Column(name = "reminder_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime reminderDate;
   /**
    * reminder's creation date of data set
    */
+  @Column(name = "reminder_creation_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime reminderCreationDate;
 
   /**
@@ -49,9 +53,9 @@ public class Reminder {
    *
    * @param reminderNo                    reminder's number
    * @param reminderTutoringAppointmentNo reminder's tutoring appointment number
-   * @param reminderCustomerNo            reminder's ustomer number
+   * @param reminderCustomerNo            reminder's customer number
    * @param reminderDate                  reminder's date
-   * @param reminderCreationDate          remidner's creation date
+   * @param reminderCreationDate          reminder's creation date
    */
   public Reminder(long reminderNo, long reminderTutoringAppointmentNo, long reminderCustomerNo,
       LocalDateTime reminderDate, LocalDateTime reminderCreationDate) {

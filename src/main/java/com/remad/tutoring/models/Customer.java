@@ -2,23 +2,28 @@ package com.remad.tutoring.models;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  * all functions concerning a customer like storing data ofr name, address, birthdate, e-mail, phone
  * number and creation date of data set
  */
 @Entity
+@Table(name ="Customer")
 public class Customer {
 
   /**
    * customer's numbers, is a primary key for data base.
    */
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private long customerNo;
   /**
    * customer's first name, for example Herbert.
@@ -31,6 +36,7 @@ public class Customer {
   /**
    * customer's birthday
    */
+  @Column(name = "customer_birthday", columnDefinition = "TIMESTAMP")
   private LocalDateTime customerBirthday;
   /**
    * customer's street
@@ -43,7 +49,10 @@ public class Customer {
   /**
    * customer's zip code
    */
-  private int customerZipCode;
+
+  @OneToOne
+  @JoinColumn(name="address_id", referencedColumnName = "id")
+  private Address customerAddress;
   /**
    * customer's phone number
    */
@@ -55,6 +64,7 @@ public class Customer {
   /**
    * customer's creation date
    */
+  @Column(name = "customer_creation_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime customerCreationDate;
 
   /**
@@ -66,32 +76,30 @@ public class Customer {
   /**
    * Customer
    *
-   * @param customerNo          customer's number
    * @param customerFirstName   customer's first name
    * @param customerLastName    customer's last name
    * @param customerBirthday    customer's birthday
    * @param customerStreet      customer's street
    * @param customerHouseNo     customer's house number
-   * @param customerZipCode     customer's zip code
+   * @param customerAddress     customer's address
    * @param customerTelephoneNo customer's telephone number
    */
-  public Customer(long customerNo, String customerFirstName, String customerLastName,
+  public Customer(String customerFirstName, String customerLastName,
       LocalDateTime customerBirthday, String customerStreet, String customerHouseNo,
-      int customerZipCode, String customerTelephoneNo) {
-    this.customerNo = customerNo;
+      Address customerAddress, String customerTelephoneNo) {
     this.customerFirstName = customerFirstName;
     this.customerLastName = customerLastName;
     this.customerBirthday = customerBirthday;
     this.customerStreet = customerStreet;
     this.customerHouseNo = customerHouseNo;
-    this.customerZipCode = customerZipCode;
+    this.customerAddress = customerAddress;
     this.customerTelephoneNo = customerTelephoneNo;
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(customerNo, customerFirstName, customerLastName, customerBirthday,
-        customerStreet, customerHouseNo, customerZipCode, customerTelephoneNo, customerEmail,
+        customerStreet, customerHouseNo, customerAddress, customerTelephoneNo, customerEmail,
         customerCreationDate);
   }
 
@@ -104,7 +112,7 @@ public class Customer {
       return false;
     }
     Customer customer = (Customer) o;
-    return customerNo == customer.customerNo && customerZipCode == customer.customerZipCode
+    return customerNo == customer.customerNo && customerAddress == customer.customerAddress
         && customerFirstName.equals(customer.customerFirstName) && customerLastName.equals(
         customer.customerLastName) && customerBirthday.equals(customer.customerBirthday)
         && customerStreet.equals(customer.customerStreet) && customerHouseNo.equals(
@@ -122,7 +130,7 @@ public class Customer {
         ", customerBirthday=" + customerBirthday +
         ", customerStreet='" + customerStreet + '\'' +
         ", customerHouseNo='" + customerHouseNo + '\'' +
-        ", customerZipCcode=" + customerZipCode +
+        ", customerAddress=" + customerAddress +
         ", customerTelephoneNo='" + customerTelephoneNo + '\'' +
         ", customerEmail='" + customerEmail + '\'' +
         ", customerCreationDate=" + customerCreationDate +
@@ -240,19 +248,19 @@ public class Customer {
   /**
    * Gets zip code
    *
-   * @return customer's zip code
+   * @return customer's address
    */
-  public int getCustomerZipCode() {
-    return customerZipCode;
+  public Address getCustomerAddress() {
+    return customerAddress;
   }
 
   /**
    * Sets zip
    *
-   * @param customerZipCode customer's zip code to set
+   * @param customerAddress customer's address to set
    */
-  public void setCustomerZipCode(int customerZipCode) {
-    this.customerZipCode = customerZipCode;
+  public void setCustomerAddress(Address customerAddress) {
+    this.customerAddress = customerAddress;
   }
 
   /**
