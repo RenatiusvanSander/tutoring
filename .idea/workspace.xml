@@ -8,11 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Invoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Reminder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ServiceContract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/TutoringAppointment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
