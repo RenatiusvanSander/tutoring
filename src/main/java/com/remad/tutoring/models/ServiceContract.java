@@ -19,15 +19,19 @@ public class ServiceContract {
    */
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "service_contract_no")
   private long serviceContractNo;
+
   /**
    * name of service contract
    */
   private String serviceContractName;
+
   /**
    * description of service contract
    */
   private String serviceContractDescription;
+
   /**
    * creation date of service contract
    */

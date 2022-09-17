@@ -22,18 +22,22 @@ public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+
   /**
    * user's name
    */
   private String userName;
+
   /**
    * user's password
    */
   private String userPassword;
+
   /**
    * the user's e-mail
    */
   private String userEmail;
+
   /**
    * creation date of this data set
    */
@@ -49,13 +53,12 @@ public class User {
   /**
    * Constructor
    *
-   * @param userNo           user number
    * @param userName         user's name
    * @param userPassword     use's password
    * @param userEmail        user's e-mail
    * @param userCreationDate user's creation date
    */
-  public User(long userNo, String userName, String userPassword, String userEmail,
+  public User(String userName, String userPassword, String userEmail,
       LocalDateTime userCreationDate) {
     this.userName = userName;
     this.userPassword = userPassword;
@@ -176,5 +179,4 @@ public class User {
   public void setUserCreationDate(LocalDateTime userCreationDate) {
     this.userCreationDate = userCreationDate;
   }
-
 }

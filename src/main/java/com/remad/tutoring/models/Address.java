@@ -24,23 +24,25 @@ public class Address {
    * the street
    */
   private String addressStreet;
+
   /**
    * house number
    */
   private String addressHouseNo;
+
   /**
    * customer's zip code
    */
-
   @OneToOne
   @JoinColumn(name = "zipcode_id", referencedColumnName = "id")
   private ZipCode addressZipCode;
 
   /**
+   *Constructor
    *
-   * @param addressStreet
-   * @param addressHouseNo
-   * @param addressZipCode
+   * @param addressStreet address's street
+   * @param addressHouseNo address's house number
+   * @param addressZipCode address's zipcode
    */
   public Address(String addressStreet, String addressHouseNo, ZipCode addressZipCode) {
     this.addressStreet = addressStreet;
@@ -48,6 +50,9 @@ public class Address {
     this.addressZipCode = addressZipCode;
   }
 
+  /**
+   * Constructor
+   */
   public Address() {
   }
 
@@ -80,26 +85,47 @@ public class Address {
         '}';
   }
 
+  /**
+   * Gets Id
+   *
+   * @return Adress's Id
+   */
   public long getId() {
     return id;
   }
 
-  public void setId(long id) {
-    this.id = id;
-  }
-
+  /**
+   * Gets street
+   *
+   * @return adress's street
+   */
   public String getAddressStreet() {
     return addressStreet;
   }
 
+  /**
+   * Sets street
+   *
+   * @param addressStreet address's street to set
+   */
   public void setAddressStreet(String addressStreet) {
     this.addressStreet = addressStreet;
   }
 
+  /**
+   * Gets house number
+   *
+   * @return address's house number
+   */
   public String getAddressHouseNo() {
     return addressHouseNo;
   }
 
+  /**
+   * Sets house number
+   *
+   * @param addressHouseNo address's house number
+   */
   public void setAddressHouseNo(String addressHouseNo) {
     this.addressHouseNo = addressHouseNo;
   }

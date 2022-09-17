@@ -22,10 +22,12 @@ public class ZipCode {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+
   /**
    * location of zip code
    */
   private String zipCodeLocation;
+
   /**
    * creation date of zip code
    */
@@ -41,12 +43,10 @@ public class ZipCode {
   /**
    * Constructor
    *
-   * @param id             the zip code as primary key
    * @param zipCodeLocation     location of belonging zip code
    * @param zipCodeCreationDate creation time of the zip code
    */
-  public ZipCode(long id, String zipCodeLocation, LocalDateTime zipCodeCreationDate) {
-    this.id = id;
+  public ZipCode(String zipCodeLocation, LocalDateTime zipCodeCreationDate) {
     this.zipCodeLocation = zipCodeLocation;
     this.zipCodeCreationDate = zipCodeCreationDate;
   }

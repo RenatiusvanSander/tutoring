@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * number and creation date of data set
  */
 @Entity
-@Table(name ="Customer")
+@Table(name = "Customer")
 public class Customer {
 
   /**
@@ -24,15 +24,19 @@ public class Customer {
    */
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "customer_no")
   private long customerNo;
+
   /**
    * customer's first name, for example Herbert.
    */
   private String customerFirstName;
+
   /**
    * customer's lastname
    */
   private String customerLastName;
+
   /**
    * customer's birthday
    */
@@ -42,6 +46,7 @@ public class Customer {
    * customer's street
    */
   private String customerStreet;
+
   /**
    * customer's house number
    */
@@ -51,16 +56,19 @@ public class Customer {
    */
 
   @OneToOne
-  @JoinColumn(name="address_id", referencedColumnName = "id")
+  @JoinColumn(name = "address_id", referencedColumnName = "id")
   private Address customerAddress;
+
   /**
    * customer's phone number
    */
   private String customerTelephoneNo;
+
   /**
    * customer's e-mail
    */
   private String customerEmail;
+
   /**
    * customer's creation date
    */

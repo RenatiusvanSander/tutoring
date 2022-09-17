@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 /**
  * a data set entry for tutoring appointment
@@ -24,17 +26,22 @@ public class TutoringAppointment {
   /**
    * tutoring appointment's customer number
    */
-  private long tutoringAppointmentCustomerNo;
+  @OneToOne
+  @JoinColumn(name = "tutoring_appointment_customer_id", referencedColumnName = "customer_no")
+  private Customer tutoringAppointmentCustomer;
+
   /**
    * date of tutoring appointment
    */
   @Column(name = "tutoring_appointment_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime tutoringAppointmentDate;
+
   /**
    * tutoring appointment's time as date time
    */
   @Column(name = "tutoring_appointment_date_time", columnDefinition = "TIMESTAMP")
   private LocalDateTime tutoringAppointmentDateTime;
+
   /**
    * tutoring appointment's creation date
    */
@@ -50,15 +57,15 @@ public class TutoringAppointment {
   /**
    * Constructor
    *
-   * @param tutoringAppointmentCustomerNo   tutoring appointment's customer number
+   * @param tutoringAppointmentCustomer     tutoring appointment's customer number
    * @param tutoringAppointmentDate         tutoring appointment's date
    * @param tutoringAppointmentDateTime     tutoring appointment's date time
    * @param tutoringAppointmentCreationDate tutoring appointment's creation date
    */
-  public TutoringAppointment(long tutoringAppointmentCustomerNo,
+  public TutoringAppointment(Customer tutoringAppointmentCustomer,
       LocalDateTime tutoringAppointmentDate, LocalDateTime tutoringAppointmentDateTime,
       LocalDateTime tutoringAppointmentCreationDate) {
-    this.tutoringAppointmentCustomerNo = tutoringAppointmentCustomerNo;
+    this.tutoringAppointmentCustomer = tutoringAppointmentCustomer;
     this.tutoringAppointmentDate = tutoringAppointmentDate;
     this.tutoringAppointmentDateTime = tutoringAppointmentDateTime;
     this.tutoringAppointmentCreationDate = tutoringAppointmentCreationDate;
@@ -87,17 +94,17 @@ public class TutoringAppointment {
    *
    * @return tutoring appointment's customer
    */
-  public long getTutoringAppointmentCustomerNo() {
-    return tutoringAppointmentCustomerNo;
+  public Customer getTutoringAppointmentCustomer() {
+    return tutoringAppointmentCustomer;
   }
 
   /**
    * Sets customer
    *
-   * @param tutoringAppointmentCustomerNo tutoring appointment's customer to set
+   * @param tutoringAppointmentCustomer tutoring appointment's customer to set
    */
-  public void setTutoringAppointmentCustomerNo(long tutoringAppointmentCustomerNo) {
-    this.tutoringAppointmentCustomerNo = tutoringAppointmentCustomerNo;
+  public void setTutoringAppointmentCustomer(Customer tutoringAppointmentCustomer) {
+    this.tutoringAppointmentCustomer = tutoringAppointmentCustomer;
   }
 
   /**
@@ -156,7 +163,7 @@ public class TutoringAppointment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(tutoringAppointmentNo, tutoringAppointmentCustomerNo,
+    return Objects.hash(tutoringAppointmentNo, tutoringAppointmentCustomer,
         tutoringAppointmentDate,
         tutoringAppointmentDateTime, tutoringAppointmentCreationDate);
   }
@@ -171,7 +178,7 @@ public class TutoringAppointment {
     }
     TutoringAppointment that = (TutoringAppointment) o;
     return tutoringAppointmentNo == that.tutoringAppointmentNo
-        && tutoringAppointmentCustomerNo == that.tutoringAppointmentCustomerNo
+        && tutoringAppointmentCustomer == that.tutoringAppointmentCustomer
         && tutoringAppointmentDate.equals(that.tutoringAppointmentDate)
         && tutoringAppointmentDateTime.equals(that.tutoringAppointmentDateTime)
         && tutoringAppointmentCreationDate.equals(that.tutoringAppointmentCreationDate);
@@ -181,7 +188,7 @@ public class TutoringAppointment {
   public String toString() {
     return "TutoringAppointment{" +
         "tutoringAppointmentNo=" + tutoringAppointmentNo +
-        ", tutoringAppointmentCustomerNo=" + tutoringAppointmentCustomerNo +
+        ", tutoringAppointmentCustomerNo=" + tutoringAppointmentCustomer +
         ", tutoringAppointmentDate=" + tutoringAppointmentDate +
         ", tutoringAppointmentDateTime=" + tutoringAppointmentDateTime +
         ", tutoringAppointmentCreationDate=" + tutoringAppointmentCreationDate +

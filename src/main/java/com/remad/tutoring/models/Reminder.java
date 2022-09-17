@@ -7,11 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  * Reminder represents calendar reminder of a tutoring appointment.
  */
 @Entity
+@Table(name = "Reminder")
 public class Reminder {
 
   /**
@@ -21,21 +25,27 @@ public class Reminder {
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "reminder_no")
   private long reminderNo;
+
   /**
    * reminder's tutoring appointment number
    */
-  // TODO mapping to appointment
-  private long reminderTutoringAppointmentNo;
+  @OneToOne
+  @JoinColumn(name = "tutoring_appointment_id", referencedColumnName = "tutoring_appointment_no")
+  private TutoringAppointment reminderTutoringAppointment;
+
   /**
    * reminder's customer number
    */
-  // TODO mapping to customer no
-  private long reminderCustomerNo;
+  @OneToOne
+  @JoinColumn(name = "reminder_customer_no", referencedColumnName = "customer_no")
+  private Customer reminderCustomer;
+
   /**
    * reminder's date
    */
   @Column(name = "reminder_date", columnDefinition = "TIMESTAMP")
   private LocalDateTime reminderDate;
+
   /**
    * reminder's creation date of data set
    */
@@ -51,64 +61,104 @@ public class Reminder {
   /**
    * Constructor
    *
-   * @param reminderNo                    reminder's number
    * @param reminderTutoringAppointmentNo reminder's tutoring appointment number
-   * @param reminderCustomerNo            reminder's customer number
+   * @param reminderCustomer              reminder's customer number
    * @param reminderDate                  reminder's date
    * @param reminderCreationDate          reminder's creation date
    */
-  public Reminder(long reminderNo, long reminderTutoringAppointmentNo, long reminderCustomerNo,
+  public Reminder(TutoringAppointment reminderTutoringAppointmentNo,
+      Customer reminderCustomer,
       LocalDateTime reminderDate, LocalDateTime reminderCreationDate) {
-    this.reminderNo = reminderNo;
-    this.reminderTutoringAppointmentNo = reminderTutoringAppointmentNo;
-    this.reminderCustomerNo = reminderCustomerNo;
+    this.reminderTutoringAppointment = reminderTutoringAppointmentNo;
+    this.reminderCustomer = reminderCustomer;
     this.reminderDate = reminderDate;
     this.reminderCreationDate = reminderCreationDate;
   }
 
+  /**
+   * Gets reminder number, here the id
+   *
+   * @return Reminder's number, primary key
+   */
   public long getReminderNo() {
     return reminderNo;
   }
 
-  public void setReminderNo(long reminderNo) {
-    this.reminderNo = reminderNo;
+  /**
+   * Gets tutoring appointment
+   *
+   * @return Reminder's tutoring appointment
+   */
+  public TutoringAppointment getReminderTutoringAppointment() {
+    return reminderTutoringAppointment;
   }
 
-  public long getReminderTutoringAppointmentNo() {
-    return reminderTutoringAppointmentNo;
+  /**
+   * Sets appointment
+   *
+   * @param reminderTutoringAppointment given Reminder's tutoring appointment to set
+   */
+  public void setReminderTutoringAppointment(TutoringAppointment reminderTutoringAppointment) {
+    this.reminderTutoringAppointment = reminderTutoringAppointment;
   }
 
-  public void setReminderTutoringAppointmentNo(long reminderTutoringAppointmentNo) {
-    this.reminderTutoringAppointmentNo = reminderTutoringAppointmentNo;
+  /**
+   * Gets customer
+   *
+   * @return Reminder's customer
+   */
+  public Customer getReminderCustomer() {
+    return reminderCustomer;
   }
 
-  public long getReminderCustomerNo() {
-    return reminderCustomerNo;
+  /**
+   * Sets customer
+   *
+   * @param reminderCustomer given Reminder's customer to set
+   */
+  public void setReminderCustomer(Customer reminderCustomer) {
+    this.reminderCustomer = reminderCustomer;
   }
 
-  public void setReminderCustomerNo(long reminderCustomerNo) {
-    this.reminderCustomerNo = reminderCustomerNo;
-  }
-
+  /**
+   * Gets date
+   *
+   * @return Reminder's date
+   */
   public LocalDateTime getReminderDate() {
     return reminderDate;
   }
 
+  /**
+   * Sets date
+   *
+   * @param reminderDate Reminder's date to set
+   */
   public void setReminderDate(LocalDateTime reminderDate) {
     this.reminderDate = reminderDate;
   }
 
+  /**
+   * Gets creation date
+   *
+   * @return Reminder's creation date
+   */
   public LocalDateTime getReminderCreationDate() {
     return reminderCreationDate;
   }
 
+  /**
+   * Sets creation date
+   *
+   * @param reminderCreationDate Reminder's creation date to set
+   */
   public void setReminderCreationDate(LocalDateTime reminderCreationDate) {
     this.reminderCreationDate = reminderCreationDate;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reminderNo, reminderTutoringAppointmentNo, reminderCustomerNo, reminderDate,
+    return Objects.hash(reminderNo, reminderTutoringAppointment, reminderCustomer, reminderDate,
         reminderCreationDate);
   }
 
@@ -124,8 +174,8 @@ public class Reminder {
 
     Reminder reminder = (Reminder) o;
     return reminderNo == reminder.reminderNo
-        && reminderTutoringAppointmentNo == reminder.reminderTutoringAppointmentNo
-        && reminderCustomerNo == reminder.reminderCustomerNo && reminderDate.equals(
+        && reminderTutoringAppointment == reminder.reminderTutoringAppointment
+        && reminderCustomer == reminder.reminderCustomer && reminderDate.equals(
         reminder.reminderDate) && reminderCreationDate.equals(reminder.reminderCreationDate);
   }
 
@@ -133,8 +183,8 @@ public class Reminder {
   public String toString() {
     return "Reminder{" +
         "reminderNo=" + reminderNo +
-        ", reminderTutoringAppointmentNo=" + reminderTutoringAppointmentNo +
-        ", reminderCustomerNo=" + reminderCustomerNo +
+        ", reminderTutoringAppointmentNo=" + reminderTutoringAppointment +
+        ", reminderCustomerNo=" + reminderCustomer +
         ", reminderDate=" + reminderDate +
         ", reminderCreationDate=" + reminderCreationDate +
         '}';

@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -27,8 +29,9 @@ public class Invoice {
   /**
    * service contract of invoice
    */
-  //TODO mapping to primary key of 'service contract no'
-  private long invoiceServiceContractNo;
+  @OneToOne
+  @JoinColumn(name = "service_contract_id", referencedColumnName = "service_contract_no")
+  private ServiceContract invoiceServiceContract;
 
   /**
    * amount of done tutoring hours to pay for
@@ -50,8 +53,9 @@ public class Invoice {
   /**
    * customer's no of invoice
    */
-  //TODO mapping to primary key of 'customer no'
-  private long invoiceCustomerNo;
+  @OneToOne
+  @JoinColumn(name = "invoice_customer", referencedColumnName = "customer_no")
+  private Customer invoiceCustomer;
 
   /**
    * creation date of invoice
@@ -68,24 +72,24 @@ public class Invoice {
   /**
    * Constructor
    *
-   * @param invoiceServiceContractNo given invoice's service contract
-   * @param invoiceTutoringHours     given invoice's tutoring hours
-   * @param invoiceDate              given invoice's date
-   * @param invoiceTutoringDate      given invoice's tutoring date
-   * @param invoiceCustomerNo        given invoice's customer no
-   * @param invoiceCreationDate      given invoice's creation date of this data set
+   * @param invoiceServiceContract given invoice's service contract
+   * @param invoiceTutoringHours   given invoice's tutoring hours
+   * @param invoiceDate            given invoice's date
+   * @param invoiceTutoringDate    given invoice's tutoring date
+   * @param invoiceCustomer        given invoice's customer no
+   * @param invoiceCreationDate    given invoice's creation date of this data set
    */
-  public Invoice(long invoiceServiceContractNo,
+  public Invoice(ServiceContract invoiceServiceContract,
       float invoiceTutoringHours,
       LocalDateTime invoiceDate,
       LocalDateTime invoiceTutoringDate,
-      long invoiceCustomerNo,
+      Customer invoiceCustomer,
       LocalDateTime invoiceCreationDate) {
-    this.invoiceServiceContractNo = invoiceServiceContractNo;
+    this.invoiceServiceContract = invoiceServiceContract;
     this.invoiceTutoringHours = invoiceTutoringHours;
     this.invoiceDate = invoiceDate;
     this.invoiceTutoringDate = invoiceTutoringDate;
-    this.invoiceCustomerNo = invoiceCustomerNo;
+    this.invoiceCustomer = invoiceCustomer;
     this.invoiceCreationDate = invoiceCreationDate;
   }
 
@@ -112,17 +116,17 @@ public class Invoice {
    *
    * @return invoice's service contract
    */
-  public long getInvoiceServiceContractNo() {
-    return invoiceServiceContractNo;
+  public ServiceContract getInvoiceServiceContract() {
+    return invoiceServiceContract;
   }
 
   /**
    * Sets service contract
    *
-   * @param invoiceServiceContractNo invoice's service contract to set
+   * @param invoiceServiceContract invoice's service contract to set
    */
-  public void setInvoiceServiceContractNo(long invoiceServiceContractNo) {
-    this.invoiceServiceContractNo = invoiceServiceContractNo;
+  public void setInvoiceServiceContract(ServiceContract invoiceServiceContract) {
+    this.invoiceServiceContract = invoiceServiceContract;
   }
 
   /**
@@ -182,19 +186,19 @@ public class Invoice {
   /**
    * Gets customer number.
    *
-   * @return invoice's customer number
+   * @return invoice's customer
    */
-  public long getInvoiceCustomerNo() {
-    return invoiceCustomerNo;
+  public Customer getInvoiceCustomer() {
+    return invoiceCustomer;
   }
 
   /**
    * Sets customer number.
    *
-   * @param invoiceCustomerNo invoice's customer number to set
+   * @param invoiceCustomer invoice's customer to set
    */
-  public void setInvoiceCustomerNo(long invoiceCustomerNo) {
-    this.invoiceCustomerNo = invoiceCustomerNo;
+  public void setInvoiceCustomer(Customer invoiceCustomer) {
+    this.invoiceCustomer = invoiceCustomer;
   }
 
   /**
@@ -217,8 +221,8 @@ public class Invoice {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNo, invoiceServiceContractNo, invoiceTutoringHours, invoiceDate,
-        invoiceTutoringDate, invoiceCustomerNo, invoiceCreationDate);
+    return Objects.hash(invoiceNo, invoiceServiceContract, invoiceTutoringHours, invoiceDate,
+        invoiceTutoringDate, invoiceCustomer, invoiceCreationDate);
   }
 
   @Override
@@ -232,9 +236,9 @@ public class Invoice {
 
     Invoice invoice = (Invoice) o;
     return invoiceNo == invoice.invoiceNo
-        && invoiceServiceContractNo == invoice.invoiceServiceContractNo
+        && invoiceServiceContract == invoice.invoiceServiceContract
         && Float.compare(invoice.invoiceTutoringHours, invoiceTutoringHours) == 0
-        && invoiceCustomerNo == invoice.invoiceCustomerNo && invoiceDate.equals(invoice.invoiceDate)
+        && invoiceCustomer == invoice.invoiceCustomer && invoiceDate.equals(invoice.invoiceDate)
         && invoiceTutoringDate.equals(invoice.invoiceTutoringDate) && invoiceCreationDate.equals(
         invoice.invoiceCreationDate);
   }
@@ -243,11 +247,11 @@ public class Invoice {
   public String toString() {
     return "Invoice{" +
         "invoiceNo=" + invoiceNo +
-        ", invoiceServiceContractNo=" + invoiceServiceContractNo +
+        ", invoiceServiceContractNo=" + invoiceServiceContract +
         ", invoiceTutoringHours=" + invoiceTutoringHours +
         ", invoiceDate=" + invoiceDate +
         ", invoiceTutoringDate=" + invoiceTutoringDate +
-        ", invoiceCustomerNo=" + invoiceCustomerNo +
+        ", invoiceCustomerNo=" + invoiceCustomer +
         ", invoiceCreationDate=" + invoiceCreationDate +
         '}';
   }
