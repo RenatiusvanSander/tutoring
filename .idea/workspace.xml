@@ -7,17 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Reminder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ServiceContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ServiceContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/TutoringAppointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/TutoringAppointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ZipCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ZipCode.java" afterDir="false" />
-    </list>
+    <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
