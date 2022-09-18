@@ -8,15 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/dao/AddressRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/dao/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/dao/InvoiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/dao/ReminderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/dao/ServiceContractRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/dao/TutoringAppointmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/dao/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/dao/ZipCodeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Reminder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ServiceContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ServiceContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/TutoringAppointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/TutoringAppointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ZipCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ZipCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
