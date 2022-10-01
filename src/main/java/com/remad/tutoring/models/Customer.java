@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class Customer {
 
   /**
-   * customer's numbers, is a primary key for data base.
+   * customer's numbers, is a primary key for database.
    */
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
