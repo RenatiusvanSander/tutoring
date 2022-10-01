@@ -8,17 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/AddressService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/AddressServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ServiceContractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ServiceContractServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ZipCodeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ZipCodeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ZipCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ZipCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

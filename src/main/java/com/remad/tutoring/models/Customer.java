@@ -44,24 +44,6 @@ public class Customer {
   private LocalDateTime customerBirthday;
 
   /**
-   * Gets zip code
-   *
-   * @return zip code
-   */
-  public ZipCode getCustomerZipCode() {
-    return customerZipCode;
-  }
-
-  /**
-   * Sets zip code
-   *
-   * @param customerZipCode customer's zip code to set
-   */
-  public void setCustomerZipCode(ZipCode customerZipCode) {
-    this.customerZipCode = customerZipCode;
-  }
-
-  /**
    * customer's zip code
    */
   @OneToOne
@@ -106,31 +88,46 @@ public class Customer {
    * @param customerAddress     customer's address
    * @param customerZipCode     customer's zip code
    * @param customerTelephoneNo customer's telephone number
+   * @param customerEmail       customer's e-mail
+   * @param customerCreationDate customer's creation date
    */
   public Customer(String customerFirstName, String customerLastName,
       LocalDateTime customerBirthday,
-      Address customerAddress, ZipCode customerZipCode, String customerTelephoneNo) {
+      Address customerAddress, ZipCode customerZipCode, String customerTelephoneNo,
+      String customerEmail, LocalDateTime customerCreationDate) {
     this.customerFirstName = customerFirstName;
     this.customerLastName = customerLastName;
     this.customerBirthday = customerBirthday;
     this.customerAddress = customerAddress;
     this.customerZipCode = customerZipCode;
     this.customerTelephoneNo = customerTelephoneNo;
+    this.customerEmail = customerEmail;
+    this.customerCreationDate = customerCreationDate;
+  }
+
+  /**
+   * Gets zip code
+   *
+   * @return zip code
+   */
+  public ZipCode getCustomerZipCode() {
+    return customerZipCode;
+  }
+
+  /**
+   * Sets zip code
+   *
+   * @param customerZipCode customer's zip code to set
+   */
+  public void setCustomerZipCode(ZipCode customerZipCode) {
+    this.customerZipCode = customerZipCode;
   }
 
   @Override
-  public String toString() {
-    return "Customer{" +
-        "customerNo=" + customerNo +
-        ", customerFirstName='" + customerFirstName + '\'' +
-        ", customerLastName='" + customerLastName + '\'' +
-        ", customerBirthday=" + customerBirthday +
-        ", customerZipCode=" + customerZipCode +
-        ", customerAddress=" + customerAddress +
-        ", customerTelephoneNo='" + customerTelephoneNo + '\'' +
-        ", customerEmail='" + customerEmail + '\'' +
-        ", customerCreationDate=" + customerCreationDate +
-        '}';
+  public int hashCode() {
+    return Objects.hash(getCustomerNo(), getCustomerFirstName(), getCustomerLastName(),
+        getCustomerBirthday(), customerZipCode, getCustomerAddress(), getCustomerTelephoneNo(),
+        getCustomerEmail(), getCustomerCreationDate());
   }
 
   @Override
@@ -154,10 +151,18 @@ public class Customer {
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash(getCustomerNo(), getCustomerFirstName(), getCustomerLastName(),
-        getCustomerBirthday(), customerZipCode, getCustomerAddress(), getCustomerTelephoneNo(),
-        getCustomerEmail(), getCustomerCreationDate());
+  public String toString() {
+    return "Customer{" +
+        "customerNo=" + customerNo +
+        ", customerFirstName='" + customerFirstName + '\'' +
+        ", customerLastName='" + customerLastName + '\'' +
+        ", customerBirthday=" + customerBirthday +
+        ", customerZipCode=" + customerZipCode +
+        ", customerAddress=" + customerAddress +
+        ", customerTelephoneNo='" + customerTelephoneNo + '\'' +
+        ", customerEmail='" + customerEmail + '\'' +
+        ", customerCreationDate=" + customerCreationDate +
+        '}';
   }
 
   /**
