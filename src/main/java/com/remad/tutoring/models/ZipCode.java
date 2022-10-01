@@ -13,7 +13,7 @@ import javax.persistence.Table;
  * Entity is concerning the zip code of a location.
  */
 @Entity
-@Table(name ="Zipcode")
+@Table(name = "Zipcode")
 public class ZipCode {
 
   /**
@@ -52,21 +52,23 @@ public class ZipCode {
   }
 
   /**
-   * Gets zipcode
+   * Constructor
    *
-   * @return zipcode
+   * @param zipCodeLocation location of belonging zip code
    */
-  public long getId() {
-    return id;
+  public ZipCode(String zipCodeLocation) {
+    this.zipCodeLocation = zipCodeLocation;
+    this.zipCodeCreationDate = null;
   }
 
   /**
-   * Sets zip code
+   * From creates {@link ZipCode}
    *
-   * @param id zip code to set
+   * @param zipCode zip code to create a zip code to search for
+   * @return zip code
    */
-  public void setId(long id) {
-    this.id = id;
+  public static ZipCode from(ZipCode zipCode) {
+    return new ZipCode(zipCode.getZipCodeLocation());
   }
 
   /**
@@ -85,6 +87,24 @@ public class ZipCode {
    */
   public void setZipCodeLocation(String zipCodeLocation) {
     this.zipCodeLocation = zipCodeLocation;
+  }
+
+  /**
+   * Gets zipcode
+   *
+   * @return zipcode
+   */
+  public long getId() {
+    return id;
+  }
+
+  /**
+   * Sets zip code
+   *
+   * @param id zip code to set
+   */
+  public void setId(long id) {
+    this.id = id;
   }
 
   /**

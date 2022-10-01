@@ -42,19 +42,35 @@ public class Customer {
    */
   @Column(name = "customer_birthday", columnDefinition = "TIMESTAMP")
   private LocalDateTime customerBirthday;
-  /**
-   * customer's street
-   */
-  private String customerStreet;
 
   /**
-   * customer's house number
+   * Gets zip code
+   *
+   * @return zip code
    */
-  private String customerHouseNo;
+  public ZipCode getCustomerZipCode() {
+    return customerZipCode;
+  }
+
+  /**
+   * Sets zip code
+   *
+   * @param customerZipCode customer's zip code to set
+   */
+  public void setCustomerZipCode(ZipCode customerZipCode) {
+    this.customerZipCode = customerZipCode;
+  }
+
   /**
    * customer's zip code
    */
+  @OneToOne
+  @JoinColumn(name = "customer_zip_code_id", referencedColumnName = "id")
+  private ZipCode customerZipCode;
 
+  /**
+   * customer's address
+   */
   @OneToOne
   @JoinColumn(name = "address_id", referencedColumnName = "id")
   private Address customerAddress;
@@ -87,28 +103,34 @@ public class Customer {
    * @param customerFirstName   customer's first name
    * @param customerLastName    customer's last name
    * @param customerBirthday    customer's birthday
-   * @param customerStreet      customer's street
-   * @param customerHouseNo     customer's house number
    * @param customerAddress     customer's address
+   * @param customerZipCode     customer's zip code
    * @param customerTelephoneNo customer's telephone number
    */
   public Customer(String customerFirstName, String customerLastName,
-      LocalDateTime customerBirthday, String customerStreet, String customerHouseNo,
-      Address customerAddress, String customerTelephoneNo) {
+      LocalDateTime customerBirthday,
+      Address customerAddress, ZipCode customerZipCode, String customerTelephoneNo) {
     this.customerFirstName = customerFirstName;
     this.customerLastName = customerLastName;
     this.customerBirthday = customerBirthday;
-    this.customerStreet = customerStreet;
-    this.customerHouseNo = customerHouseNo;
     this.customerAddress = customerAddress;
+    this.customerZipCode = customerZipCode;
     this.customerTelephoneNo = customerTelephoneNo;
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash(customerNo, customerFirstName, customerLastName, customerBirthday,
-        customerStreet, customerHouseNo, customerAddress, customerTelephoneNo, customerEmail,
-        customerCreationDate);
+  public String toString() {
+    return "Customer{" +
+        "customerNo=" + customerNo +
+        ", customerFirstName='" + customerFirstName + '\'' +
+        ", customerLastName='" + customerLastName + '\'' +
+        ", customerBirthday=" + customerBirthday +
+        ", customerZipCode=" + customerZipCode +
+        ", customerAddress=" + customerAddress +
+        ", customerTelephoneNo='" + customerTelephoneNo + '\'' +
+        ", customerEmail='" + customerEmail + '\'' +
+        ", customerCreationDate=" + customerCreationDate +
+        '}';
   }
 
   @Override
@@ -120,29 +142,22 @@ public class Customer {
       return false;
     }
     Customer customer = (Customer) o;
-    return customerNo == customer.customerNo && customerAddress == customer.customerAddress
-        && customerFirstName.equals(customer.customerFirstName) && customerLastName.equals(
-        customer.customerLastName) && customerBirthday.equals(customer.customerBirthday)
-        && customerStreet.equals(customer.customerStreet) && customerHouseNo.equals(
-        customer.customerHouseNo) && customerTelephoneNo.equals(customer.customerTelephoneNo)
-        && customerEmail.equals(customer.customerEmail) && customerCreationDate.equals(
-        customer.customerCreationDate);
+    return getCustomerNo() == customer.getCustomerNo() && getCustomerFirstName().equals(
+        customer.getCustomerFirstName()) && getCustomerLastName().equals(
+        customer.getCustomerLastName()) && getCustomerBirthday().equals(
+        customer.getCustomerBirthday()) && customerZipCode.equals(customer.customerZipCode)
+        && getCustomerAddress().equals(customer.getCustomerAddress())
+        && getCustomerTelephoneNo().equals(customer.getCustomerTelephoneNo())
+        && getCustomerEmail().equals(customer.getCustomerEmail())
+        && getCustomerCreationDate().equals(
+        customer.getCustomerCreationDate());
   }
 
   @Override
-  public String toString() {
-    return "Customer{" +
-        "customerNo=" + customerNo +
-        ", customerFirstName='" + customerFirstName + '\'' +
-        ", customerLastName='" + customerLastName + '\'' +
-        ", customerBirthday=" + customerBirthday +
-        ", customerStreet='" + customerStreet + '\'' +
-        ", customerHouseNo='" + customerHouseNo + '\'' +
-        ", customerAddress=" + customerAddress +
-        ", customerTelephoneNo='" + customerTelephoneNo + '\'' +
-        ", customerEmail='" + customerEmail + '\'' +
-        ", customerCreationDate=" + customerCreationDate +
-        '}';
+  public int hashCode() {
+    return Objects.hash(getCustomerNo(), getCustomerFirstName(), getCustomerLastName(),
+        getCustomerBirthday(), customerZipCode, getCustomerAddress(), getCustomerTelephoneNo(),
+        getCustomerEmail(), getCustomerCreationDate());
   }
 
   /**
@@ -215,42 +230,6 @@ public class Customer {
    */
   public void setCustomerBirthday(LocalDateTime customerBirthday) {
     this.customerBirthday = customerBirthday;
-  }
-
-  /**
-   * Gets street
-   *
-   * @return customer's street
-   */
-  public String getCustomerStreet() {
-    return customerStreet;
-  }
-
-  /**
-   * Sets street
-   *
-   * @param customerStreet customer's street to set
-   */
-  public void setCustomerStreet(String customerStreet) {
-    this.customerStreet = customerStreet;
-  }
-
-  /**
-   * Gets house number
-   *
-   * @return customer's house number
-   */
-  public String getCustomerHouseNo() {
-    return customerHouseNo;
-  }
-
-  /**
-   * Sets house number
-   *
-   * @param customerHouseNo customer's house number
-   */
-  public void setCustomerHouseNo(String customerHouseNo) {
-    this.customerHouseNo = customerHouseNo;
   }
 
   /**
