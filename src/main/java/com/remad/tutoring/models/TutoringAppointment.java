@@ -23,6 +23,7 @@ public class TutoringAppointment {
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "tutoring_appointment_no")
   private long tutoringAppointmentNo;
+
   /**
    * tutoring appointment's customer number
    */
