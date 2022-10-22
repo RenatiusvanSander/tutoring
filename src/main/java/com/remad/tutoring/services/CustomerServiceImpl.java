@@ -4,11 +4,13 @@ import com.remad.tutoring.dao.CustomerRepository;
 import com.remad.tutoring.models.Address;
 import com.remad.tutoring.models.Customer;
 import java.util.Collection;
+import org.springframework.stereotype.Service;
 
 /**
  * Implementation of {@link CustomerService} concerning create, delete, update, gets single and all
  * customers
  */
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
   /**

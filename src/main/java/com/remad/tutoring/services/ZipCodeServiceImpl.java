@@ -5,6 +5,7 @@ import com.remad.tutoring.models.ZipCode;
 import java.util.Optional;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * Zip code service implementation concerning of creating, deleting and existing.
@@ -44,5 +45,10 @@ public class ZipCodeServiceImpl implements ZipCodeService {
   @Override
   public boolean exists(long id) {
     return this.zipCodeRepository.existsById(id);
+  }
+
+  @Override
+  public ZipCode getZipCode(long id) {
+    return this.zipCodeRepository.getReferenceById(id);
   }
 }

@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.common.PDStream;
+import org.springframework.stereotype.Service;
 
 /**
  * Implementation for {@link PDFCreationService}. Service creates PDF-document from an
  * {@link Invoice} instance.
  */
+@Service
 public class PDFCreationServiceImpl implements PDFCreationService {
 
   /**

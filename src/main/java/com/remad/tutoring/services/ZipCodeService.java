@@ -28,4 +28,12 @@ public interface ZipCodeService {
    * @return true / false for zip code exists
    */
   boolean exists(long zipCode);
+
+  /**
+   * Gets ZioCode
+   *
+   * @param id zipcode's identifier
+   * @return the zip code
+   */
+  ZipCode getZipCode(long id);
 }
