@@ -2,10 +2,13 @@ package com.remad.tutoring.services;
 
 import com.remad.tutoring.dao.ZipCodeRepository;
 import com.remad.tutoring.models.ZipCode;
+import java.util.Collection;
 import java.util.Optional;
 import org.springframework.data.domain.Example;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Zip code service implementation concerning of creating, deleting and existing.
@@ -50,5 +53,18 @@ public class ZipCodeServiceImpl implements ZipCodeService {
   @Override
   public ZipCode getZipCode(long id) {
     return this.zipCodeRepository.getReferenceById(id);
+  }
+
+  /**
+   * Gets all zip codes
+   *
+   * @return all zip codes or none.
+   */
+  @GetMapping("/get-all-zipcodes")
+  @ResponseBody
+  public ResponseEntity<Collection<ZipCode>> getAllZipCodes() {
+    Collection<ZipCode> zipCodes = this.zipCodeRepository.findAll();
+
+    return ResponseEntity.ok(zipCodes);
   }
 }

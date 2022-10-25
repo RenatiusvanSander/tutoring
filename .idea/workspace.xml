@@ -8,14 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ServiceContractController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/SmokeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/PDFCreationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/PDFCreationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ZipCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ZipCodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ZipCodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ZipCodeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +48,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ZipCodeControllerTest">
     <configuration name="TutoringApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.TutoringApp" />
       <module name="RemyApi" />
@@ -68,8 +69,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HttpRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RemyApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.HttpRequestTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmokeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RemyApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.SmokeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZipCodeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RemyApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ZipCodeControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ZipCodeControllerTest" />
+        <item itemvalue="JUnit.HttpRequestTest" />
+        <item itemvalue="JUnit.SmokeTest" />
         <item itemvalue="Application.TutoringApp" />
       </list>
     </recent_temporary>
