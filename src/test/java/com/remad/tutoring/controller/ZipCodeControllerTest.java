@@ -1,6 +1,5 @@
 package com.remad.tutoring.controller;
 
-
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -11,15 +10,23 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+/**
+ * Junit tests for {@link ZipCodeController}
+ */
 @WebMvcTest(ZipCodeController.class)
 public class ZipCodeControllerTest {
 
+  /**
+   * the mocked bean of {@link ZipCodeService}
+   */
   @MockBean
   private ZipCodeService zipCodeService;
 
+  /**
+   * mocked zip code controller for tests
+   */
   @Autowired
   private MockMvc mockMvc;
 

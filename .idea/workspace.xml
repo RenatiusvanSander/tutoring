@@ -8,13 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ServiceContractController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/SmokeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ZipCodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/ZipCodeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +141,15 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/UserController.java</url>
           <line>58</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java</url>
+          <line>33</line>
+          <properties class="com.remad.tutoring.controller.ZipCodeControllerTest" method="existsShouldReturnHttpStatus">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
