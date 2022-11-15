@@ -6,7 +6,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.remad.tutoring.controllers.ZipCodeController;
 import com.remad.tutoring.models.ZipCode;
 import com.remad.tutoring.services.ZipCodeService;
@@ -55,10 +54,7 @@ public class ZipCodeControllerTest {
   @Test
   public void testCreateZipCodeShouldReturnHttpStatusOk() throws Exception {
     ZipCode zipCodeToCreate = new ZipCode("Hamburg", LocalDateTime.now());
-
-    ObjectMapper objectMapper = new ObjectMapper();
-    objectMapper.findAndRegisterModules();
-    String json = objectMapper.writeValueAsString(zipCodeToCreate);
+    String json = TestTools.getObjectMapper().writeValueAsString(zipCodeToCreate);
 
     mockMvc.perform(
             post("/zipcodes/create-zipcode", zipCodeToCreate).contentType(MediaType.APPLICATION_JSON)
