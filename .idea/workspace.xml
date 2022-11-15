@@ -50,20 +50,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ZipCodeControllerTest">
-    <configuration name="TutoringApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.TutoringApp" />
-      <module name="RemyApi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.remad.tutoring.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ZipCodeControllerTest.testCreateZipCodeShouldReturnHttpStatusOk">
     <configuration name="HttpRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RemyApi" />
       <extension name="coverage">
@@ -109,12 +96,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ZipCodeControllerTest.existsShouldReturnHttpStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RemyApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ZipCodeControllerTest" />
+      <option name="METHOD_NAME" value="existsShouldReturnHttpStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZipCodeControllerTest.testCreateZipCodeShouldReturnHttpStatusOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RemyApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ZipCodeControllerTest" />
+      <option name="METHOD_NAME" value="testCreateZipCodeShouldReturnHttpStatusOk" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ZipCodeControllerTest.testCreateZipCodeShouldReturnHttpStatusOk" />
         <item itemvalue="JUnit.ZipCodeControllerTest" />
+        <item itemvalue="JUnit.ZipCodeControllerTest.existsShouldReturnHttpStatus" />
         <item itemvalue="JUnit.HttpRequestTest" />
         <item itemvalue="JUnit.SmokeTest" />
-        <item itemvalue="Application.TutoringApp" />
       </list>
     </recent_temporary>
   </component>
@@ -142,9 +162,24 @@
           <line>58</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java</url>
-          <line>33</line>
+          <line>39</line>
           <properties class="com.remad.tutoring.controller.ZipCodeControllerTest" method="existsShouldReturnHttpStatus">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
