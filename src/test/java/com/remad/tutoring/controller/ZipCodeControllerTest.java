@@ -4,6 +4,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.remad.tutoring.controllers.ZipCodeController;
@@ -48,7 +49,8 @@ public class ZipCodeControllerTest {
   public void testDeleteZipCodeShouldReturnHttpStatusOk() throws Exception {
     long pathVariableId = 5L;
 
-    mockMvc.perform(delete("/zipcodes/{id}", pathVariableId)).andExpect(status().isOk());
+    mockMvc.perform(delete("/zipcodes/{id}", pathVariableId))
+        .andExpect(status().isOk());
   }
 
   @Test
@@ -57,9 +59,24 @@ public class ZipCodeControllerTest {
     String json = TestTools.getObjectMapper().writeValueAsString(zipCodeToCreate);
 
     mockMvc.perform(
-            post("/zipcodes/create-zipcode", zipCodeToCreate).contentType(MediaType.APPLICATION_JSON)
+            post("/zipcodes/create-zipcode", zipCodeToCreate)
+                .contentType(MediaType.APPLICATION_JSON)
                 .content(json)
                 .characterEncoding("utf-8"))
         .andExpect(status().isOk());
+  }
+
+  @Test
+  public void testGetZipCodeShouldReturnExpectedZipCode() throws Exception {
+    long pathVariableId = 225L;
+    String expectedZipCodeLocation = "Hamburg";
+    LocalDateTime expectedDateTime = LocalDateTime.now();
+    when(zipCodeService.getZipCode(pathVariableId)).thenReturn(
+        new ZipCode(expectedZipCodeLocation, expectedDateTime));
+
+    mockMvc.perform(get("/zipcodes/{id}", pathVariableId))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.zipCodeLocation").value(expectedZipCodeLocation))
+        .andExpect(jsonPath("$.zipCodeCreationDate").value(expectedDateTime.toString()));
   }
 }
