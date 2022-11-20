@@ -1,6 +1,8 @@
 package com.remad.tutoring.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONArray;
 
 /**
  * Test tools concerning spring boot tests
@@ -8,26 +10,51 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class TestTools {
 
   /**
+   * the object mapper
+   */
+  private static final ObjectMapper OBJECT_MAPPER = createObjectMapper();
+
+  /**
    * private constructor
    */
   private TestTools() {
-    throw new IllegalAccessError("Okease access in a static way.");
+    throw new IllegalAccessError("Pease access in a static way.");
   }
 
   /**
-   * the object mapper
+   * Converts {@link JSONArray} to {qlink String}
+   *
+   * @param obj the object to convert to string-encoded JsonArray
+   * @return string-encoded json-array
    */
-  private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+  public static String expectedJsoArrayToString(Object obj) throws JsonProcessingException {
+    JSONArray json = new JSONArray();
+    json.put(getObjectMapper().writeValueAsString(obj));
+
+    return json.toString()
+        .replace("\\", "")
+        .replace("\"{", "{")
+        .replace("}\"", "}");
+  }
 
   /**
-   * Gets object mapper
+   * Creates object mapper
    *
    * @return object mapper
    */
-  public static ObjectMapper getObjectMapper() {
-    ObjectMapper mapper = OBJECT_MAPPER;
+  public static ObjectMapper createObjectMapper() {
+    ObjectMapper mapper = new ObjectMapper();
     mapper.findAndRegisterModules();
 
     return mapper;
+  }
+
+  /**
+   * Gets JSON Object mapper
+   *
+   * @return JSON Object Mapper, {@link ObjectMapper}
+   */
+  public static ObjectMapper getObjectMapper() {
+    return OBJECT_MAPPER;
   }
 }

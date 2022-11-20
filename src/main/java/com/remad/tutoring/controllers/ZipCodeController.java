@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
- * Controller conerning deleting, creating, validating and getting all zip codes.
+ * Controller concerning deleting, creating, validating and getting all zip codes.
  */
 @Controller
 @RequestMapping("/zipcodes")

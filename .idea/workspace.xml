@@ -8,8 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/AddressControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/TestTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/TestTools.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +53,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ZipCodeControllerTest.testGetZipCode">
-    <configuration name="HttpRequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AddressControllerTest.testDeleteAddressShouldReturnStatusOk">
+    <configuration name="AddressControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RemyApi" />
       <extension name="coverage">
         <pattern>
@@ -60,13 +63,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.HttpRequestTest" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.AddressControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ZipCodeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddressControllerTest.testDeleteAddressShouldReturnStatusOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RemyApi" />
       <extension name="coverage">
         <pattern>
@@ -75,29 +78,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ZipCodeControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ZipCodeControllerTest.existsShouldReturnHttpStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RemyApi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ZipCodeControllerTest" />
-      <option name="METHOD_NAME" value="existsShouldReturnHttpStatus" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.AddressControllerTest" />
+      <option name="METHOD_NAME" value="testDeleteAddressShouldReturnStatusOk" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ZipCodeControllerTest.testCreateZipCodeShouldReturnHttpStatusOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddressControllerTest.testGetAddressShouldReturnExpectedAddress" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RemyApi" />
       <extension name="coverage">
         <pattern>
@@ -106,8 +94,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ZipCodeControllerTest" />
-      <option name="METHOD_NAME" value="testCreateZipCodeShouldReturnHttpStatusOk" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.AddressControllerTest" />
+      <option name="METHOD_NAME" value="testGetAddressShouldReturnExpectedAddress" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddressControllerTest.testGetsAddressesShouldReturnAddresses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RemyApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.AddressControllerTest" />
+      <option name="METHOD_NAME" value="testGetsAddressesShouldReturnAddresses" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddressControllerTest.testDeleteAddressShouldReturnStatusOk" />
+        <item itemvalue="JUnit.AddressControllerTest.testGetAddressShouldReturnExpectedAddress" />
+        <item itemvalue="JUnit.AddressControllerTest" />
+        <item itemvalue="JUnit.AddressControllerTest.testGetsAddressesShouldReturnAddresses" />
         <item itemvalue="JUnit.ZipCodeControllerTest.testGetZipCode" />
-        <item itemvalue="JUnit.ZipCodeControllerTest.testCreateZipCodeShouldReturnHttpStatusOk" />
-        <item itemvalue="JUnit.ZipCodeControllerTest" />
-        <item itemvalue="JUnit.ZipCodeControllerTest.existsShouldReturnHttpStatus" />
-        <item itemvalue="JUnit.HttpRequestTest" />
       </list>
     </recent_temporary>
   </component>
