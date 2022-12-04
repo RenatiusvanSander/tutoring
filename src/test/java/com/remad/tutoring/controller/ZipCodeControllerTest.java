@@ -59,7 +59,7 @@ public class ZipCodeControllerTest {
     String json = TestTools.getObjectMapper().writeValueAsString(zipCodeToCreate);
 
     mockMvc.perform(
-            post("/zipcodes/create-zipcode", zipCodeToCreate)
+            post("/zipcodes/create-zipcode")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json)
                 .characterEncoding("utf-8"))

@@ -6,7 +6,7 @@ import java.util.Collection;
 import org.springframework.stereotype.Service;
 
 /**
- * address service implementation of address service concerning create, delete, update, get single
+ * Address service implementation of address service concerning create, delete, update, get single
  * and all addresses.
  */
 @Service

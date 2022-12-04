@@ -9,10 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
@@ -62,7 +62,7 @@ public class ServiceContractController {
    */
   @GetMapping("/{id}")
   @ResponseBody
-  public ResponseEntity<ServiceContract> getServiceContract(long id) {
+  public ResponseEntity<ServiceContract> getServiceContract(@PathVariable long id) {
     try {
       ServiceContract contract = this.serviceContractService.getServiceContract(id);
 
@@ -83,7 +83,8 @@ public class ServiceContractController {
    */
   @PostMapping("/create-service-contract")
   @ResponseBody
-  public ResponseEntity<Object> createServiceContract(ServiceContract serviceContract) {
+  public ResponseEntity<Object> createServiceContract(
+      @RequestBody ServiceContract serviceContract) {
     try {
       this.serviceContractService.createServiceContract(serviceContract);
 
@@ -126,7 +127,8 @@ public class ServiceContractController {
    */
   @PutMapping("/{id}")
   @ResponseBody
-  public ResponseEntity<Object> updateServiceContract(long id, ServiceContract serviceContract) {
+  public ResponseEntity<Object> updateServiceContract(@PathVariable long id,
+      @RequestBody ServiceContract serviceContract) {
     try {
       this.serviceContractService.updateServiceContract(id, serviceContract);
 

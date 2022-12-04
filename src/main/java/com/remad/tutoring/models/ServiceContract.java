@@ -53,6 +53,9 @@ public class ServiceContract {
    */
   public ServiceContract(String serviceContractName,
       String serviceContractDescription, LocalDateTime serviceContractCreationDate) {
+    this.serviceContractName = serviceContractName;
+    this.serviceContractDescription = serviceContractDescription;
+    this.serviceContractCreationDate = serviceContractCreationDate;
   }
 
   /**

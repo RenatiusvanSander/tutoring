@@ -8,11 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/AddressController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/AddressControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/CustomerControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ServiceContractControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ServiceContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ServiceContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ServiceContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/models/ServiceContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/services/AddressServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/TestTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/TestTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="UnitTestClass" />
         <option value="Class" />
       </list>
     </option>
@@ -50,11 +56,11 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.AddressControllerTest.testDeleteAddressShouldReturnStatusOk">
-    <configuration name="AddressControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CustomerControllerTest">
+    <configuration name="CustomerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RemyApi" />
       <extension name="coverage">
         <pattern>
@@ -63,13 +69,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.AddressControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.CustomerControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddressControllerTest.testDeleteAddressShouldReturnStatusOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceContractControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RemyApi" />
       <extension name="coverage">
         <pattern>
@@ -78,14 +84,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.AddressControllerTest" />
-      <option name="METHOD_NAME" value="testDeleteAddressShouldReturnStatusOk" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ServiceContractControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceContractControllerTest.testCreateServiceContract" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RemyApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ServiceContractControllerTest" />
+      <option name="METHOD_NAME" value="testCreateServiceContract" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddressControllerTest.testGetAddressShouldReturnExpectedAddress" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceContractControllerTest.testUpdateServiceContract" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RemyApi" />
       <extension name="coverage">
         <pattern>
@@ -94,14 +115,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.AddressControllerTest" />
-      <option name="METHOD_NAME" value="testGetAddressShouldReturnExpectedAddress" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ServiceContractControllerTest" />
+      <option name="METHOD_NAME" value="testUpdateServiceContract" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddressControllerTest.testGetsAddressesShouldReturnAddresses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RemyApi" />
       <extension name="coverage">
         <pattern>
@@ -110,36 +131,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.AddressControllerTest" />
-      <option name="METHOD_NAME" value="testGetsAddressesShouldReturnAddresses" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ZipCodeControllerTest.testGetZipCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RemyApi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.remad.tutoring.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.remad.tutoring.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.ZipCodeControllerTest" />
-      <option name="METHOD_NAME" value="testGetZipCode" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.remad.tutoring.controller.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AddressControllerTest.testDeleteAddressShouldReturnStatusOk" />
-        <item itemvalue="JUnit.AddressControllerTest.testGetAddressShouldReturnExpectedAddress" />
-        <item itemvalue="JUnit.AddressControllerTest" />
-        <item itemvalue="JUnit.AddressControllerTest.testGetsAddressesShouldReturnAddresses" />
-        <item itemvalue="JUnit.ZipCodeControllerTest.testGetZipCode" />
+        <item itemvalue="JUnit.CustomerControllerTest" />
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.ServiceContractControllerTest" />
+        <item itemvalue="JUnit.ServiceContractControllerTest.testUpdateServiceContract" />
+        <item itemvalue="JUnit.ServiceContractControllerTest.testCreateServiceContract" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +180,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ZipCodeController.java</url>
           <line>37</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ServiceContractController.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/ServiceContractController.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/ZipCodeControllerTest.java</url>
