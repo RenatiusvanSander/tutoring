@@ -14,7 +14,7 @@ import com.remad.tutoring.models.ZipCode;
 import com.remad.tutoring.services.CustomerService;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
-import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -24,6 +24,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 
+/**
+ * JUnit tests of {@link CustomerController}
+ */
 @WebMvcTest(CustomerController.class)
 public class CustomerControllerTest {
 
@@ -104,9 +107,9 @@ public class CustomerControllerTest {
     Customer customer = new Customer("Max", "Mustermann", LocalDateTime.now(), address, zipCode,
         "+49524472726252", "remad@hsfsfs.de", LocalDateTime.now());
     String expectedContent = TestTools.responseEntityBodyToJsonString(
-        ResponseEntity.ok(Arrays.asList(customer)));
+        ResponseEntity.ok(List.of(customer)));
 
-    when(mockedCustomerService.getCustomer(1L)).thenReturn(customer);
+    when(mockedCustomerService.getAllCustomers()).thenReturn(List.of(customer));
     MockHttpServletResponse actualResponse = mockedController.perform(
             get("/customers/get-all-customers"))
         .andReturn().getResponse();
