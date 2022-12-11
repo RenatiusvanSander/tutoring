@@ -3,9 +3,6 @@ package com.remad.tutoring.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.remad.tutoring.models.ServiceContract;
-import java.util.Arrays;
-import java.util.Collection;
 import org.json.JSONArray;
 import org.springframework.http.ResponseEntity;
 

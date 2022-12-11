@@ -8,9 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d30fde9e-a981-4dd6-96eb-f1695ce0df8b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/InvoiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/InvoiceControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/remad/tutoring/controllers/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/CustomerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/CustomerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/TestTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/remad/tutoring/controller/TestTools.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
