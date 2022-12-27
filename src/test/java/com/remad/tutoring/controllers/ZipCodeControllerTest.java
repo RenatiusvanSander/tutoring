@@ -1,4 +1,4 @@
-package com.remad.tutoring.controller;
+package com.remad.tutoring.controllers;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -7,7 +7,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.remad.tutoring.controllers.ZipCodeController;
 import com.remad.tutoring.models.ZipCode;
 import com.remad.tutoring.services.ZipCodeService;
 import java.time.LocalDateTime;

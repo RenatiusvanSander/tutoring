@@ -1,8 +1,13 @@
-package com.remad.tutoring.controller;
+package com.remad.tutoring.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.remad.tutoring.models.Address;
+import com.remad.tutoring.models.Customer;
+import com.remad.tutoring.models.TutoringAppointment;
+import com.remad.tutoring.models.ZipCode;
+import java.time.LocalDateTime;
 import org.json.JSONArray;
 import org.springframework.http.ResponseEntity;
 
@@ -60,7 +65,7 @@ public class TestTools {
   public static String responseEntityBodyToJsonString(ResponseEntity<?> responseEntity)
       throws JsonProcessingException {
     return getObjectMapper().disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
-        .writeValueAsString(responseEntity.getBody());
+        .writeValueAsString(responseEntity.getBody()).replace("ä", "Ã¤");
   }
 
   /**
@@ -73,5 +78,46 @@ public class TestTools {
     mapper.findAndRegisterModules();
 
     return mapper;
+  }
+
+  /**
+   * Creates createTutoringAppointment
+   *
+   * @return created Tutoring Appointment
+   */
+  public static TutoringAppointment createTutoringAppointment() {
+    Customer customer = createCustomer();
+
+    return new
+        TutoringAppointment(customer, customer.getCustomerCreationDate(),
+        customer.getCustomerCreationDate(), customer.getCustomerCreationDate());
+  }
+
+  /**
+   * Creates Customer
+   *
+   * @return created customer
+   */
+  public static Customer createCustomer() {
+    return new Customer("Max", "Mustermann", LocalDateTime.now(), createAddress(), createZipCode(),
+        "+49524472726252", "remad@hsfsfs.de", LocalDateTime.now());
+  }
+
+  /**
+   * Creates address
+   *
+   * @return created address
+   */
+  public static Address createAddress() {
+    return new Address("Volksdorfer Grenzweg", "40A", createZipCode());
+  }
+
+  /**
+   * creates zip code
+   *
+   * @return created zip code
+   */
+  public static ZipCode createZipCode() {
+    return new ZipCode("Hamburg", LocalDateTime.now());
   }
 }

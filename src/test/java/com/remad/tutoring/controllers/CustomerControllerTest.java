@@ -1,4 +1,4 @@
-package com.remad.tutoring.controller;
+package com.remad.tutoring.controllers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -7,7 +7,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 
-import com.remad.tutoring.controllers.CustomerController;
 import com.remad.tutoring.models.Address;
 import com.remad.tutoring.models.Customer;
 import com.remad.tutoring.models.ZipCode;

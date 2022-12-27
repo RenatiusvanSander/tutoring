@@ -1,10 +1,7 @@
-package com.remad.tutoring.controller;
+package com.remad.tutoring.controllers;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.remad.tutoring.controllers.ServiceContractController;
-import com.remad.tutoring.controllers.UserController;
-import com.remad.tutoring.controllers.ZipCodeController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
